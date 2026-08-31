@@ -1,0 +1,15 @@
+{
+  "roles": {
+    "it-support-specialist": {
+      "department_id": 1,
+      "group_ids": [12, 18],
+      "asset_types": ["laptop", "sim_card"]
+    },
+    "property-manager": {
+      "department_id": 2,
+      "group_ids": [21],
+      "asset_types": ["laptop", "sim_card"]
+    }
+  }
+}
+

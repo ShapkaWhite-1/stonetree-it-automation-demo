@@ -1,0 +1,14 @@
+[Unit]
+Description=Back up StoneTree IT automation audit database
+
+[Service]
+Type=oneshot
+User=stonetree-automation
+Group=stonetree-automation
+EnvironmentFile=-/etc/stonetree-it-automation/environment
+ExecStart=/usr/local/sbin/stonetree-backup-audit-db
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/var/backups/stonetree-it-automation /var/lib/stonetree-it-automation

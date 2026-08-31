@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily backup of StoneTree IT automation audit database
+
+[Timer]
+OnCalendar=*-*-* 02:15:00 UTC
+Persistent=true
+RandomizedDelaySec=10m
+
+[Install]
+WantedBy=timers.target

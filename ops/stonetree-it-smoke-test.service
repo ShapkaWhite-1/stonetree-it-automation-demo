@@ -1,0 +1,20 @@
+[Unit]
+Description=StoneTree IT automation offline smoke test
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=stonetree-automation
+Group=stonetree-automation
+WorkingDirectory=/opt/stonetree-it-automation
+EnvironmentFile=-/etc/stonetree-it-automation/environment
+ExecStart=/opt/stonetree-it-automation/.venv/bin/python main.py --db /var/lib/stonetree-it-automation/operations.sqlite3 demo
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/stonetree-it-automation
+
+[Install]
+WantedBy=multi-user.target
